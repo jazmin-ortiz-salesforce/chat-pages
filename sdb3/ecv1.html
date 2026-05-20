@@ -6,7 +6,8 @@
 <body>
 	<p align="center"><font color ="red">CWC</font></p>
   <br/>
-  <br/>		
+  <br/>
+<button id="showButton">Show Button</button>
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -27,6 +28,15 @@
 	window.addEventListener("onEmbeddedMessagingConversationStarted", (event) => {
   		console.log("Received the onEmbeddedMessagingConversationStarted event…");
 		alert("Received the onEmbeddedMessagingConversationStarted event…");
+	});
+
+	window.addEventListener("onEmbeddedMessagingButtonCreated", (event) => {
+  		embeddedservice_bootstrap.utilAPI.hideChatButton();
+	});
+
+	const button = document.getElementById('showButton');
+		button.addEventListener('click', function() {
+    	embeddedservice_bootstrap.utilAPI.showChatButton();
 	});
 </script>
 <script type='text/javascript' src='https://orgfarm-c89cc8d30e.test1.my.pc-rnd.site.com/ESWweb21779201362163/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
