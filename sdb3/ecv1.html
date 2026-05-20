@@ -34,6 +34,15 @@
   		embeddedservice_bootstrap.utilAPI.hideChatButton();
 	});
 
+	window.addEventListener("onEmbeddedMessagingReady", () => {
+    	console.log("Received the onEmbeddedMessagingReady event…");
+
+    	// Send data to Salesforce
+   	 embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"FavoriteDrink" : "Water!"});
+
+});
+
+
 	const button = document.getElementById('showButton');
 		button.addEventListener('click', function() {
     	embeddedservice_bootstrap.utilAPI.showChatButton();
