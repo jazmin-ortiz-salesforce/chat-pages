@@ -31,7 +31,7 @@
 	});
 
 	window.addEventListener("onEmbeddedMessagingButtonCreated", (event) => {
-  		embeddedservice_bootstrap.utilAPI.hideChatButton();
+  	//	embeddedservice_bootstrap.utilAPI.hideChatButton();
 	});
 
 	window.addEventListener("onEmbeddedMessagingReady", () => {
@@ -40,14 +40,6 @@
     	// Send data to Salesforce
    	 embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"FavoriteDrink" : "Water!"});
 
-	embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
-    	// List the pre-chat field names with the value and whether
-   	 	// it's editable in the pre-chat form.
-    	"_firstName": {
-      	"value": "Jane",
-      	"isEditableByEndUser": false
-    	}
-  	});
 
 });
 
